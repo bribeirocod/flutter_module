@@ -1,0 +1,83 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter assemble --output=/Users/brunoribeiro/development/flutter-projects/flutter_login_module/.ios/Flutter/ -dTargetPlatform=ios -dTargetFile=lib/main.dart -dBuildMode=release -dIosArchs=x86_64 -dSplitDebugInfo= -dTreeShakeIcons=false -dTrackWidgetCreation=false -dDartObfuscation=false -dEnableBitcode= --ExtraGenSnapshotOptions= --DartDefines= -dExtraFrontEndOptions= release_ios_bundle_flutter_assets
+
+## exception
+
+ArgumentError: Invalid argument(s): Cannot find executable for /Users/brunoribeiro/development/flutter/bin/cache/artifacts/engine/ios-release/gen_snapshot_x86_64.
+
+```
+#0      _getExecutable (package:process/src/interface/local_process_manager.dart:127:5)
+#1      LocalProcessManager.start (package:process/src/interface/local_process_manager.dart:43:30)
+#2      _DefaultProcessUtils.start (package:flutter_tools/src/base/process.dart:462:28)
+#3      _DefaultProcessUtils.stream (package:flutter_tools/src/base/process.dart:480:35)
+#4      GenSnapshot.run (package:flutter_tools/src/base/build.dart:74:26)
+#5      AOTSnapshotter.build (package:flutter_tools/src/base/build.dart:198:56)
+#6      AotAssemblyBase.build (package:flutter_tools/src/build_system/targets/ios.dart:68:31)
+#7      _BuildInstance._invokeInternal (package:flutter_tools/src/build_system/build_system.dart:795:27)
+<asynchronous suspension>
+#8      _BuildInstance.invokeTarget.<anonymous closure> (package:flutter_tools/src/build_system/build_system.dart:738:35)
+#9      new Future.sync (dart:async/future.dart:222:31)
+#10     AsyncMemoizer.runOnce (package:async/src/async_memoizer.dart:43:45)
+#11     _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:738:21)
+<asynchronous suspension>
+<asynchronous suspension>
+#12     FlutterBuildSystem.build (package:flutter_tools/src/build_system/build_system.dart:560:36)
+#13     AssembleCommand.runCommand (package:flutter_tools/src/commands/assemble.dart:213:58)
+#14     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:797:18)
+#15     _rootRunUnary (dart:async/zone.dart:1198:47)
+#16     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#17     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+#18     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+#19     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+#20     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+#21     Future._asyncCompleteWithValue.<anonymous closure> (dart:async/future_impl.dart:567:7)
+#22     _rootRun (dart:async/zone.dart:1190:13)
+#23     _CustomZone.run (dart:async/zone.dart:1093:19)
+#24     _CustomZone.runGuarded (dart:async/zone.dart:997:7)
+#25     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1037:23)
+#26     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#27     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#28     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#29     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel master, 1.19.0-2.0.pre.133, on Mac OS X 10.15.4 19E287, locale pt-BR)
+    • Flutter version 1.19.0-2.0.pre.133 at /Users/brunoribeiro/development/flutter
+    • Framework revision e92afc16b6 (12 days ago), 2020-05-21 05:29:01 +0900
+    • Engine revision 2d4e83921d
+    • Dart version 2.9.0 (build 2.9.0-9.0.dev 40f7a11d89)
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 29.0.3)
+    • Android SDK at /Users/brunoribeiro/Library/Android/sdk/
+    • Platform android-29, build-tools 29.0.3
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_212-release-1586-b4-5784211)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 11.5)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 11.5, Build version 11E608c
+    • CocoaPods version 1.9.1
+
+[✓] Android Studio (version 3.6)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin version 45.1.1
+    • Dart plugin version 192.8052
+    • Java version OpenJDK Runtime Environment (build 1.8.0_212-release-1586-b4-5784211)
+
+[✓] VS Code (version 1.45.1)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.11.0
+
+[!] Connected device
+    ! No devices available
+
+! Doctor found issues in 1 category.
+```
